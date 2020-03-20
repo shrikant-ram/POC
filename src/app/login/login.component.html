@@ -1,57 +1,44 @@
 <section class="login_page">
     <mat-card class="card">
         <figure class="logo">
-            <!-- <img src="https://logodownload.org/wp-content/uploads/2014/07/adidas-logo.png" />  -->
-            <h3 class="logo">MyVehicle</h3>
+            <img src="../../assets/logo.png" /> <br>
+            <!-- <h3 class="logo">MyVehicle</h3> -->
         </figure>
-        <form [formGroup]="loginForm">
-<mat-card-content>
-        <h1 class="text-center">Login Here</h1>
-        <mat-form-field class="example-full-width">
-            <mat-label>Email</mat-label>
-            <input matInput placeholder="Please Enter Email" value="">
-            <!-- <mat-error *ngIf="false">
-                Please enter a valid email address
-            </mat-error>
-            <mat-error *ngIf="false">
-                Email is <strong>required</strong>
-            </mat-error> -->
-        </mat-form-field>
-        <mat-form-field class="example-full-width">
-            <mat-label>Password</mat-label>
-            <input matInput type="password" placeholder="Please Enter password" value="">
-            <!-- <mat-error *ngIf="false">
-                Please enter a valid Password
-            </mat-error>
-            <mat-error *ngIf="false">
-                Password is <strong>required</strong>
-            </mat-error> -->
-        </mat-form-field>
-</mat-card-content>
-           <mat-card-footer>
-                <button mat-raised-button color="primary">Login &nbsp;<mat-icon>touch_app</mat-icon></button>
-                <br><br>
-                <p><label><a href="#">Create an account.</a> </label></p>
-           </mat-card-footer>
-               
-            <!-- <div class="form-group">
-                <input type="email" placeholder="Enter email" class="form-control" required />
-                <label class="invalide-message" style="display:none;">Invalide Email.</label>
-            </div>
-            <div class="form-group">
-                <input type="password" placeholder="Enter Password" class="form-control" required />
-                <label class="invalide-message">Password required.</label>
-            </div>
-            <div class="form-group">
-                <label class="form-inline"><input type="checkbox" class="form-control" required />&nbsp; Remember
-                    me.</label>
-            </div>
-            <div class="form-group">
-                <button class="btn btn-success">Login &nbsp;&nbsp;&nbsp;<i class="fa fa-save"></i> </button>
-            </div>
-            <div class="form-group">
-                <label><a href="#">Create an account.</a> </label>
-            </div> -->
+        <form [formGroup]="loginForm" (ngSubmit)="onSubmit(loginForm)">
+            <mat-card-content>
+                <section class="login-content">
+                    <h1 class="text-center">Login Here</h1>
+                    <mat-form-field class="full-width">
+                        <mat-label>Email</mat-label>
+                        <input matInput placeholder="Please Enter Email" name="email" formControlName="email"
+                            required />
+                        <mat-error *ngIf="loginForm.controls['email'].errors?.email">
+                            Please enter a valid email address
+                        </mat-error>
+                        <mat-error *ngIf="loginForm.controls['email'].errors?.required">
+                            Email is <strong>required</strong>
+                        </mat-error>
+                    </mat-form-field>
+                    <mat-form-field class="full-width">
+                        <mat-label>Password</mat-label>
+                        <input matInput type="password" placeholder="Please Enter password" name="password"
+                            formControlName="password" required />
+                        <mat-error *ngIf="loginForm.controls['password'].errors?.required">
+                            Please enter a valid Password
+                        </mat-error>                        
+                    </mat-form-field>                                                                     
+                    <div class="text-left"><mat-checkbox formControlName="remember">Remember me</mat-checkbox>  </div>                    
+                    <button mat-raised-button color="primary" class="full-width" type="submit">Login &nbsp;<mat-icon>
+                            touch_app</mat-icon>
+                    </button>
+                </section>
+            </mat-card-content>
+            <mat-card-footer>
+                <br>
+                <p><a href="#">Forgot password?</a></p>
+                <p><label><a href="#">Create an account. SignUp here</a> </label></p>
+            </mat-card-footer>
+
         </form>
     </mat-card>
 </section>
