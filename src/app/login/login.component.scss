@@ -1,0 +1,32 @@
+.login_page{
+    height: 100vh;
+    width: 100vw;
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    align-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    background-image: url(../../assets/car_bg.png);
+    background-size: cover;
+    background-position: left;
+    background-blend-mode: overlay;
+    background-color: #272727;
+}
+h1{font-family: 'Poppins', sans-serif; font-size:30px; margin-bottom:30px;}
+.card{    min-height: 200px;width: 350px;padding: 40px 20px;text-align: center;box-shadow: 0px 0px 9px -2px #afabab;border-radius: 5px;border: 1px solid #ddd;}
+.card .invalide-message{ background-color:#f33838; width: 100%; text-align:left; padding:1px 12px; font-size: 12px; color: #fff;  }
+.card .form-group{ margin-bottom:12px;}
+.card .logo img{height:40px;}
+.card .logo .logo{
+    font-weight: bolder;
+    color: #fff;
+    font-size:30px;
+    text-shadow: 3px 1px 1px #333;
+    display: inline-block;
+    padding: 6px 12px;
+    background: #ddd;
+    border: 1px solid #333;
+    position: relative;    
+}
