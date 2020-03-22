@@ -1,0 +1,15 @@
+header{
+    width:100%;
+    display:flex;
+    justify-content: space-between;
+    align-content: center;
+    border-bottom:1px solid #ddd;
+    box-shadow:1px 1px 4px 1px rgb(124, 120, 120);
+    padding:4px 15px 0;
+    figure{
+        // margin-left: -15px;
+        // background-color:red;
+        img{ height:40px;}
+    }
+    nav{}
+}

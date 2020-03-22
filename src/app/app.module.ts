@@ -9,7 +9,11 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {MatCheckboxModule} from '@angular/material/checkbox';
+import { MatCheckboxModule} from '@angular/material/checkbox';
+import { ExtraModule } from './extra/extra.module'
+import { AuthModule } from "./auth/auth.module";
+import { ToastrModule } from "ngx-toastr";
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,11 +25,14 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
     AppRoutingModule,
     ReactiveFormsModule, 
     FormsModule,
+    // ExtraModule,
     MatIconModule,
     MatInputModule,
     MatCheckboxModule,
     MatButtonModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    AuthModule,
+    ToastrModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
