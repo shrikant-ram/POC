@@ -38,3 +38,7 @@ $vahicle-app-theme: mat-light-theme($vahicle-app-primary, $vahicle-app-accent, $
 
 .full-width{width:100%}
 .mat-form-field{font-size:16px;}
+.page-container{
+    min-height:80vh;
+    width:100%;
+}

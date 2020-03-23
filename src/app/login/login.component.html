@@ -32,6 +32,9 @@
                             touch_app</mat-icon>
                     </button>
                 </section>
+                <p class="text-danger" *ngIf="loginMessg">
+                    Email or passwor is iccorect. Please try again with different credentials.
+                </p>
             </mat-card-content>
             <mat-card-footer>
                 <br>

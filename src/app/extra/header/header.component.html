@@ -4,10 +4,22 @@
     </figure>
     <nav class="navbar nav navbar-light">
         <ul class="nav">
-            <li><mat-icon>message</mat-icon></li>
-            <li><mat-icon>notification_important</mat-icon></li>
-            <li><mat-icon>user</mat-icon>&nbsp;<b>John Deo</b>&nbsp;&nbsp;</li>
-            <li><button mat-raised-button color="primary" (click)="logout()">Logout <mat-icon>power-off</mat-icon> </button></li>
+            <li><button mat-icon-button>
+                    <mat-icon>message</mat-icon>
+                </button>
+            <li>
+                <button mat-icon-button>
+                    <mat-icon>notification_important</mat-icon>
+                </button>
+            </li>
+            <li>
+               <button mat-icon-button>
+                <mat-icon>account_circle</mat-icon>
+               </button><b>John Deo</b>&nbsp;&nbsp;
+            </li>
+            <li><button mat-icon-button (click)="logout()" color="primary">
+                    <mat-icon>settings_power</mat-icon>
+                </button></li>
         </ul>
     </nav>
 </header>
