@@ -5,13 +5,33 @@ import { CarListComponent } from './car-list/car-list.component';
 import { userRouterModule } from './user-routing'
 import { ExtraModule } from '../extra/extra.module'
 import { UserComponent } from './user.component';
+import { 
+  MatIconModule,
+  MatCardModule,
+  MatButtonModule,
+  MatFormFieldModule,
+  MatTableModule,
+  MatPaginatorModule,
+  MatCheckboxModule,
+  MatTabsModule,
+  MatInputModule
+} from "@angular/material";
 
 @NgModule({
   declarations: [DashboardComponent, CarListComponent, UserComponent],
   imports: [
     CommonModule,
     userRouterModule,
-    ExtraModule
+    ExtraModule,
+    MatIconModule,
+    MatCardModule,
+    MatButtonModule,
+    MatFormFieldModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatCheckboxModule,
+    MatTabsModule,
+    MatInputModule
   ]
 })
 export class UserModule { }
