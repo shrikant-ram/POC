@@ -12,9 +12,10 @@ import { PageTitleComponent } from './page-title/page-title.component';
 import { AddVehicleComponent } from './add-vehicle/add-vehicle.component'
 import { ReactiveFormsModule, FormsModule } from "@angular/forms";
 import { MatInputModule } from "@angular/material/input";
+import { ProfileImageComponent } from './profile-image/profile-image.component';
 
 @NgModule({
-  declarations: [HeaderComponent, FooterComponent, SidebarComponent, ListPageComponent, PageTitleComponent, AddVehicleComponent],
+  declarations: [HeaderComponent, FooterComponent, SidebarComponent, ListPageComponent, PageTitleComponent, AddVehicleComponent, ProfileImageComponent],
   imports: [
     CommonModule,
     MatIconModule,
@@ -27,6 +28,6 @@ import { MatInputModule } from "@angular/material/input";
 
   ],
   entryComponents:[AddVehicleComponent],
-  exports:[HeaderComponent, FooterComponent, SidebarComponent, ListPageComponent, PageTitleComponent, AddVehicleComponent]
+  exports:[ProfileImageComponent,HeaderComponent, FooterComponent, SidebarComponent, ListPageComponent, PageTitleComponent, AddVehicleComponent]
 })
 export class ExtraModule { }

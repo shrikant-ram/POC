@@ -6,6 +6,20 @@ header{
     border-bottom:1px solid #ddd;
     box-shadow:1px 1px 4px 1px rgb(124, 120, 120);
     padding:4px 15px 0;
+    .logo{
+        margin:0;
+        h1{
+            font-family: "Nunito", sans-serif;
+            margin:9px 0;
+            font-weight: 800;
+            color: #5f5f5f;
+            b{
+                background-color:#ddd;
+                padding:2px 2px;
+                border-radius:12px;
+            }
+        }
+    }
     figure{
         // margin-left: -15px;
         // background-color:red;
