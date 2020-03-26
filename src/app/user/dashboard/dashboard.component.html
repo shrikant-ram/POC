@@ -1,92 +1,104 @@
 <br>
-<nav class="nav navbar navbar-light top_page">
-    <app-page-title [title]="card_title"></app-page-title>    
-    <ul class="pull-right nav navbar navbar-right">
-        <li><button mat-icon-button><mat-icon>view_module</mat-icon></button> </li>
-        <li><button mat-icon-button><mat-icon>view_list</mat-icon></button> </li>
-        <li><button mat-icon-button><mat-icon>pin_drop</mat-icon></button> </li>
-        <li>
-            <mat-form-field>
-                <span matPrefix><mat-icon style="position: relative;
-                    bottom: -7px;
-                    color: #757474;">search</mat-icon> &nbsp;</span>
-                <input type="Search" matInput placeholder="Search" (keyup)="applyFilter($event)" />
-            </mat-form-field>
-            &nbsp;&nbsp;&nbsp;
-        </li>
-        <li>
-            <button mat-raised-button color="primary"><mat-icon>control_point</mat-icon> Add Vehicle</button>
-        </li>
-    </ul>
-</nav>
-<section class="table-container">
-     
-      <div class="mat-elevation-z8">
-        <table mat-table [dataSource]="dataSource" matSort class="full-width">      
-          <!-- ID Column -->
-          <ng-container matColumnDef="id">
-            <th mat-header-cell *matHeaderCellDef mat-sort-header> ID </th>
-            <td mat-cell *matCellDef="let row"> {{row.id}} </td>
-          </ng-container>
-       <!-- ID Column -->
-       <ng-container matColumnDef="image">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header> </th>
-        <td mat-cell *matCellDef="let row"> <img src="{{row.image}}" height="60px" alt="{{row.image}}" /> </td>
-      </ng-container>
-          <!-- Progress Column -->
-          <ng-container matColumnDef="model">
-            <th mat-header-cell *matHeaderCellDef mat-sort-header> Model </th>
-            <td mat-cell *matCellDef="let row"> {{row.model | titlecase}} </td>
-          </ng-container>
-          <ng-container matColumnDef="color">
-            <th mat-header-cell *matHeaderCellDef mat-sort-header> Color </th>
-            <td mat-cell *matCellDef="let row"> {{row.color | titlecase}} </td>
-          </ng-container>
-          <!-- Name Column -->
-          <ng-container matColumnDef="name">
-            <th mat-header-cell *matHeaderCellDef mat-sort-header> Nick Name </th>
-            <td mat-cell *matCellDef="let row"> {{row.name | titlecase}} </td>
-          </ng-container>
-          <ng-container matColumnDef="year">
-            <th mat-header-cell *matHeaderCellDef mat-sort-header> Year </th>
-            <td mat-cell *matCellDef="let row"> {{row.year}} </td>
-          </ng-container>
-          <!-- Color Column -->
-          <ng-container matColumnDef="mileage">
-            <th mat-header-cell *matHeaderCellDef mat-sort-header> Mileage </th>
-            <td mat-cell *matCellDef="let row"> {{row.mileage}} mil. </td>
-          </ng-container>
-          <ng-container matColumnDef="next_service">
-            <th mat-header-cell *matHeaderCellDef mat-sort-header> Next Services In </th>
-            <td mat-cell *matCellDef="let row"> {{row.next_service}} mils.</td>
-          </ng-container>
-          <ng-container matColumnDef="issue">
-            <th mat-header-cell *matHeaderCellDef mat-sort-header> Diagnostic Issues </th>
-            <td mat-cell *matCellDef="let row"> {{row.issue}} </td>
-          </ng-container>
-          <ng-container matColumnDef="feature">
-            <th mat-header-cell *matHeaderCellDef mat-sort-header> Additional Feature </th>
-            <td mat-cell *matCellDef="let row" >
-              <ul>
-                <li *ngFor="let ft of row.feature">
-                   <p><b>Charge:</b>{{ft.charge}}</p>
-                    <p><b>Driving Range:</b>{{ft.range}}</p>
-                    <p><b>Batteery Status:</b>{{ft.battery}}</p>
-                    <p><b>UVO Status:</b>{{ft.UVO}}</p>
-                    <p><b>Last Refreshed:</b>{{ft.refreshed}} mins ago.</p>
-                </li>
-              </ul>
-            </td>
-          </ng-container>
-          <ng-container matColumnDef="action">
-            <th mat-header-cell *matHeaderCellDef mat-sort-header> </th>
-            <td mat-cell *matCellDef="let row"> <button mat-icon-button><mat-icon>settings</mat-icon></button> </td>
-          </ng-container>
-          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-          <tr mat-row *matRowDef="let row; columns: displayedColumns;">
-          </tr>
-        </table>
+
+<mat-tab-group>
+  <mat-tab label="My Vahicle">
+    <nav class="nav navbar navbar-light top_page">
+      <app-page-title [title]="card_title"></app-page-title>    
+      <ul class="pull-right nav navbar navbar-right">
+          <li><button mat-icon-button><mat-icon>view_module</mat-icon></button> </li>
+          <li><button mat-icon-button><mat-icon>view_list</mat-icon></button> </li>
+          <li><button mat-icon-button><mat-icon>pin_drop</mat-icon></button> </li>
+          <li>
+              <mat-form-field>
+                  <span matPrefix><mat-icon style="position: relative;
+                      bottom: -7px;
+                      color: #757474;">search</mat-icon> &nbsp;</span>
+                  <input type="Search" matInput placeholder="Search" (keyup)="applyFilter($event)" />
+              </mat-form-field>
+              &nbsp;&nbsp;&nbsp;
+          </li>
+          <li>
+              <button mat-raised-button color="primary" (click)="addVehicle()"><mat-icon>control_point</mat-icon> Add Vehicle</button>
+          </li>
+      </ul>
+  </nav>
+  <section class="table-container">
+       
+        <div class="mat-elevation-z8">
+          <table mat-table [dataSource]="dataSource" matSort class="full-width">      
+            <!-- ID Column -->
+            <ng-container matColumnDef="id">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> ID </th>
+              <td mat-cell *matCellDef="let row"> {{row.id}} </td>
+            </ng-container>
+         <!-- ID Column -->
+         <ng-container matColumnDef="image">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> </th>
+          <td mat-cell *matCellDef="let row"> <img src="{{row.image}}" height="60px" alt="{{row.image}}" /> </td>
+        </ng-container>
+            <!-- Progress Column -->
+            <ng-container matColumnDef="model">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> Model </th>
+              <td mat-cell *matCellDef="let row"> {{row.model | titlecase}} </td>
+            </ng-container>
+            <ng-container matColumnDef="color">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> Color </th>
+              <td mat-cell *matCellDef="let row"> {{row.color | titlecase}} </td>
+            </ng-container>
+            <!-- Name Column -->
+            <ng-container matColumnDef="name">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> Nick Name </th>
+              <td mat-cell *matCellDef="let row"> {{row.name | titlecase}} </td>
+            </ng-container>
+            <ng-container matColumnDef="year">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> Year </th>
+              <td mat-cell *matCellDef="let row"> {{row.year}} </td>
+            </ng-container>
+            <!-- Color Column -->
+            <ng-container matColumnDef="mileage">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> Mileage </th>
+              <td mat-cell *matCellDef="let row"> {{row.mileage}} mil. </td>
+            </ng-container>
+            <ng-container matColumnDef="next_service">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> Next Services In </th>
+              <td mat-cell *matCellDef="let row"> {{row.next_service}} mils.</td>
+            </ng-container>
+            <ng-container matColumnDef="issue">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> Diagnostic Issues </th>
+              <td mat-cell *matCellDef="let row"> {{row.issue}} </td>
+            </ng-container>
+            <ng-container matColumnDef="feature">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> Additional Feature </th>
+              <td mat-cell *matCellDef="let row" >
+                <ul>
+                  <li *ngFor="let ft of row.feature">
+                     <p><b>Charge:</b>{{ft.charge}}</p>
+                      <p><b>Driving Range:</b>{{ft.range}}</p>
+                      <p><b>Batteery Status:</b>{{ft.battery}}</p>
+                      <p><b>UVO Status:</b>{{ft.UVO}}</p>
+                      <p><b>Last Refreshed:</b>{{ft.refreshed}} mins ago.</p>
+                  </li>
+                </ul>
+              </td>
+            </ng-container>
+            <ng-container matColumnDef="action">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> </th>
+              <td mat-cell *matCellDef="let row"> <button mat-icon-button><mat-icon>settings</mat-icon></button> </td>
+            </ng-container>
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;">
+            </tr>
+          </table>
+          <p *ngIf="dataSource.data?.length === 0">No Data Found.</p>
+          <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+        </div>
+  </section>
+  </mat-tab>
+  <mat-tab label="Awards">
+    <nav class="nav navbar navbar-light top_page">
+      <app-page-title [title]="'Awards list'"></app-page-title>    
       
-        <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
-      </div>
-</section>
+  </nav>
+  </mat-tab>
+</mat-tab-group>
+

@@ -1,10 +1,10 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { PageTitleComponent } from "../../extra/page-title/page-title.component";
-
+import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
-
+import { AddVehicleComponent } from "../../extra/add-vehicle/add-vehicle.component";
 export interface UserData {
   id: string;
   model: string;
@@ -54,7 +54,9 @@ export class DashboardComponent implements OnInit {
   @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
   @ViewChild(MatSort, { static: true }) sort: MatSort;
 
-  constructor() {
+  constructor(
+    private dialog:MatDialog
+  ) {
 
     // Assign the data to the data source for the table to render
     this.dataSource = new MatTableDataSource(DATA);
@@ -73,5 +75,15 @@ export class DashboardComponent implements OnInit {
       this.dataSource.paginator.firstPage();
     }
   }
+
+  addVehicle(){
+     let addVahicle = this.dialog.open(AddVehicleComponent, {
+       width:'500px'       
+     })
+     addVahicle.afterClosed().subscribe(result=>{
+       console.log("Add vehicle Result :",result)
+     });
+  }
+
 }
 

@@ -1,0 +1,28 @@
+<article>
+    <h1 class="text-center">{{'Add Your Vehicle' | titlecase}}</h1>
+<div class="addForm">
+    <form>
+        <mat-form-field class="full-width">
+            <mat-label>NICKNAME</mat-label>
+            <input type="text" matInput placeholder="Enter Nickname" />
+            <!-- <mat-icon matSuffix>account</mat-icon> -->
+            <mat-hint class="text-success"><b>Tip:</b> Use customer name, your VIN, or Licence# </mat-hint>
+        </mat-form-field>
+        <br>
+        <br>
+        <mat-form-field class="full-width">
+            <mat-label>VIN <small><a href="#">Where can I find my VIN?</a></small></mat-label>
+            <input type="number" matInput placeholder="Enter VIN" />
+        </mat-form-field>
+        <br>
+        <br>
+        <div class="btn-group">
+            <button mat-raiseda-button color="primary" class="btn btn-danger btn-lg">Save and Closed</button>
+            <button mat-raiseda-button class="btn btn-default btn-lg">
+                <mat-icon>control_point</mat-icon>
+                Add Another</button>
+        </div>
+        <br>
+    </form>
+</div>
+</article>

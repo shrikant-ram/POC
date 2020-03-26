@@ -14,6 +14,7 @@ import {
   MatPaginatorModule,
   MatCheckboxModule,
   MatTabsModule,
+  MatDialogModule,
   MatInputModule
 } from "@angular/material";
 
@@ -26,6 +27,7 @@ import {
     MatIconModule,
     MatCardModule,
     MatButtonModule,
+    MatDialogModule,
     MatFormFieldModule,
     MatTableModule,
     MatPaginatorModule,

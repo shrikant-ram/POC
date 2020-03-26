@@ -1,13 +1,18 @@
 /* You can add global styles to this file, and also import other style files */
 @import url('https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i&display=swap');
 @import url('https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css');
+@import url('https://fonts.googleapis.com/css?family=Nunito:400,400i,600,700,800,900&display=swap');
 body,html, *{
     font-family: 'Lato', sans-serif;
+    // font-family: 'Nunito', sans-serif;
 }
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body { 
+    margin: 0; 
+    // font-family: Roboto, "Helvetica Neue", sans-serif;
+ }
 ul,li{list-style: none; padding:0; margin:0;}
-
+h1, h2, h3, h4, h5, h6{font-family: 'Nunito', sans-serif;}
 
 
 @import '~@angular/material/theming';
@@ -50,4 +55,10 @@ $vahicle-app-theme: mat-light-theme($vahicle-app-primary, $vahicle-app-accent, $
 }
 ::-webkit-scrollbar-thumb{
     background-color:rgb(214, 61, 61);
+}
+
+.mat-tab-label-content{
+    font-family: "Nunito", sans-serif;
+    font-size: 18px;
+    font-weight: bolder;
 }
